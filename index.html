@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TD Digital</title>
+    <link rel="icon" type="image/png" href="asset/img/logo3.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #dc2626 100%);
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .floating-whatsapp {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .testimonial-slider {
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .testimonial-card {
+            scroll-snap-align: start;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #dc2626;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header/Navbar -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="asset/img/logo3.png" alt="Logo TD Digital" class="h-8 w-auto object-contain">
+                    <span class="text-xl font-bold text-gray-800">TD Digital</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600">Beranda</a>
+                    <a href="#layanan" class="nav-link text-gray-700 hover:text-blue-600">Layanan</a>
+                    <a href="#portfolio" class="nav-link text-gray-700 hover:text-blue-600">Portfolio</a>
+                    <a href="#testimoni" class="nav-link text-gray-700 hover:text-blue-600">Testimoni</a>
+                    <a href="#tim" class="nav-link text-gray-700 hover:text-blue-600">Tim</a>
+                    <a href="#kontak" class="nav-link text-gray-700 hover:text-blue-600">Kontak</a>
+                    <a href="#tentang" class="nav-link text-gray-700 hover:text-blue-600">Tentang Kami</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+                <a href="#layanan" class="block py-2 text-gray-700 hover:text-blue-600">Layanan</a>
+                <a href="#portfolio" class="block py-2 text-gray-700 hover:text-blue-600">Portfolio</a>
+                <a href="#testimoni" class="block py-2 text-gray-700 hover:text-blue-600">Testimoni</a>
+                <a href="#tim" class="block py-2 text-gray-700 hover:text-blue-600">Tim</a>
+                <a href="#kontak" class="block py-2 text-gray-700 hover:text-blue-600">Kontak</a>
+                <a href="#tentang" class="block py-2 text-gray-700 hover:text-blue-600">Tentang Kami</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/62859106513667" target="_blank"
+        class="floating-whatsapp fixed bottom-6 right-6 bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg hover:bg-green-600 transition-all z-40">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 gradient-bg text-white">
+        <div class="container mx-auto px-4 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Jasa Pembuatan Website, Aplikasi & Desain
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-200">Buat sekolah/bisnismu lebih modern dan digital bersama kami
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://www.youtube.com/@tddigitalofficial" target="_blank"
+                            class="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center">
+                            <i class="fab fa-youtube mr-2"></i>Chanel Youtube
+                        </a>
+                        <a href="https://wa.me/62859106513667" target="_blank"
+                            class="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors text-center">
+                            <i class="fab fa-whatsapp mr-2"></i>Chat WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="asset/img/h2.png" alt="Technology Illustration" class="rounded-lg shadow-2xl hover-scale">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Layanan -->
+    <section id="layanan" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Layanan Aplikasi</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Absensi -->
+                <div class="bg-gray-50 rounded-lg shadow-lg p-6 hover-scale">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-fingerprint text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Absensi AOM</h3>
+                    <p class="text-gray-600 mb-4">Online Attendance Management untuk Solusi absensi modern untuk
+                        sekolah anda dan notifikasi terkirim ke WhatsApp orang tua siswa realtime.</p>
+                    <div class="flex gap-3">
+                        <a href="https://youtu.be/K16R3t1njgQ" target="_blank"
+                            class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg text-center hover:bg-blue-700 transition-colors">
+                            Lihat Demo
+                        </a>
+                        <a href="https://absensi.tddig.my.id" target="_blank"
+                            class="flex-1 bg-red-600 text-white px-4 py-2 rounded-lg text-center hover:bg-red-700 transition-colors">
+                            Website
+                        </a>
+                        <a href="https://wa.me/62859106513667?text=Saya%20tertarik%20dengan%20layanan%20Absensi%20OAM"
+                            target="_blank"
+                            class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg text-center hover:bg-green-700 transition-colors">
+                            Langganan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: evoting -->
+                <div class="bg-gray-50 rounded-lg shadow-lg p-6 hover-scale">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-vote-yea text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Pemilihan Osis</h3>
+                    <p class="text-gray-600 mb-4">Sistem pemilihan osis menggunakan model E-Voting untuk memudahkan
+                        dalam mengelola data, aman, modern, responsif, realtime dan profesiona.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="https://youtu.be/xV2M2p_1Ylk" target="_blank"
+                            class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg text-center hover:bg-blue-700 transition-colors">
+                            Lihat Demo
+                        </a>
+                        <a href="http://evoting.tddig.my.id" target="_blank"
+                            class="flex-1 bg-red-600 text-white px-4 py-2 rounded-lg text-center hover:bg-red-700 transition-colors">
+                            Website
+                        </a>
+                        <a href="https://wa.me/62859106513667?text=Saya%20tertarik%20dengan%20layanan%20Aplikasi%20E-Voting"
+                            target="_blank"
+                            class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg text-center hover:bg-green-700 transition-colors">
+                            Langganan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Smartschool -->
+                <div class="bg-gray-50 rounded-lg shadow-lg p-6 hover-scale">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-graduation-cap text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Smartschool System</h3>
+                    <p class="text-gray-600 mb-4">Sistem manajemen sekolah terintegrasi absensi siswa,pembayaran SPP dan
+                        akun Orang Tua Wali lengkap aplikasi Android</p>
+                    <div class="flex gap-3">
+                        <a href="https://demo-smartschool.techsolutions.com" target="_blank"
+                            class="flex-1 bg-yellow-600 text-white px-4 py-2 rounded-lg text-center hover:bg-yellow-700 transition-colors">
+                            Dalam Proses Pengembangan
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Testimoni -->
+    <section id="testimoni" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Testimoni Klien</h2>
+            <div class="testimonial-slider flex overflow-x-auto gap-6 pb-4">
+
+                <!-- Testimoni 1 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-lg p-6 min-w-[300px] md:min-w-[350px]">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/client1/60/60" alt="Client"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Agus Salimsyam</h4>
+                            <p class="text-sm text-gray-600">SMK Negeri 6 Palopo</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700">"Aplikasi E-Voting sangat membantu dalam pelaksanaan pemilihan OSIS.
+                        Prosesnya
+                        cepat, hasilnya transparan, dan mudah digunakan."</p>
+                </div>
+
+                <!-- Testimoni 2 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-lg p-6 min-w-[300px] md:min-w-[350px]">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/client2/60/60" alt="Client"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Fachrudin</h4>
+                            <p class="text-sm text-gray-600">SMA IT Al Qudwah</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-gray-300"></i>
+                    </div>
+                    <p class="text-gray-700">"Aplikasi e-votingnya benar-benar membantu! Cepat, aman, dan hasilnya
+                        akurat. Sangat direkomendasikan."</p>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tim -->
+    <section id="tim" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Tim Kami</h2>
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
+                <!-- Tim 1: CEO -->
+                <div class="text-center hover-scale">
+                    <img src="https://picsum.photos/seed/team1/200/200" alt="CEO"
+                        class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-semibold mb-1">Ramlan</h3>
+                    <p class="text-gray-600 mb-3">CEO & Founder</p>
+                    <div class="flex justify-center space-x-3">
+                        <a href="#" class="text-blue-600 hover:text-blue-800"><i
+                                class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-pink-600 hover:text-pink-800"><i
+                                class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-blue-700 hover:text-blue-900"><i
+                                class="fab fa-linkedin text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Tim 2: Marketing -->
+                <div class="text-center hover-scale">
+                    <img src="https://picsum.photos/seed/team4/200/200" alt="Marketing"
+                        class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-semibold mb-1">Ichal Al Fariz</h3>
+                    <p class="text-gray-600 mb-3">Digital Marketing</p>
+                    <div class="flex justify-center space-x-3">
+                        <a href="#" class="text-blue-600 hover:text-blue-800"><i
+                                class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-pink-600 hover:text-pink-800"><i
+                                class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-twitter text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Portfolio -->
+    <section id="portfolio" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Portfolio</h2>
+            <p class="text-center">Dalam Proses Update, Mohon untuk tetap bersabar 🙏</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+
+                <!-- Portfolio 1 --
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-scale">
+                    <img src="https://picsum.photos/seed/portfolio1/400/300" alt="Project 1"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Website Perusahaan Konstruksi</h3>
+                        <p class="text-gray-600 mb-4">Company profile dengan fitur galery proyek dan contact form.</p>
+                        <a href="https://demo-konstruksi.techsolutions.com" target="_blank"
+                            class="text-blue-600 hover:text-blue-800 font-semibold">
+                            Lihat Demo <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                -- Portfolio 2 --
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-scale">
+                    <img src="https://picsum.photos/seed/portfolio2/400/300" alt="Project 2"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Aplikasi E-Commerce Fashion</h3>
+                        <p class="text-gray-600 mb-4">Platform jual beli online dengan payment gateway terintegrasi.</p>
+                        <a href="https://demo-fashion.techsolutions.com" target="_blank"
+                            class="text-blue-600 hover:text-blue-800 font-semibold">
+                            Lihat Demo <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <-- Portfolio 3 --
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-scale">
+                    <img src="https://picsum.photos/seed/portfolio3/400/300" alt="Project 3"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Sistem Manajemen Rumah Sakit</h3>
+                        <p class="text-gray-600 mb-4">Aplikasi untuk manajemen pasien, dokter, dan jadwal.</p>
+                        <a href="https://demo-rumahsakit.techsolutions.com" target="_blank"
+                            class="text-blue-600 hover:text-blue-800 font-semibold">
+                            Lihat Demo <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <-- Portfolio 4 --
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-scale">
+                    <img src="https://picsum.photos/seed/portfolio4/400/300" alt="Project 4"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Aplikasi Mobile Banking</h3>
+                        <p class="text-gray-600 mb-4">Mobile app untuk transaksi perbankan digital yang aman.</p>
+                        <a href="https://demo-banking.techsolutions.com" target="_blank"
+                            class="text-blue-600 hover:text-blue-800 font-semibold">
+                            Lihat Demo <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <-- Portfolio 5 --
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-scale">
+                    <img src="https://picsum.photos/seed/portfolio5/400/300" alt="Project 5"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Portal Berita Online</h3>
+                        <p class="text-gray-600 mb-4">Website berita dengan CMS yang mudah dikelola.</p>
+                        <a href="https://demo-berita.techsolutions.com" target="_blank"
+                            class="text-blue-600 hover:text-blue-800 font-semibold">
+                            Lihat Demo <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <-- Portfolio 6 --
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover-scale">
+                    <img src="https://picsum.photos/seed/portfolio6/400/300" alt="Project 6"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Aplikasi Booking Hotel</h3>
+                        <p class="text-gray-600 mb-4">Platform reservasi hotel dengan fitur payment integration.</p>
+                        <a href="https://demo-hotel.techsolutions.com" target="_blank"
+                            class="text-blue-600 hover:text-blue-800 font-semibold">
+                            Lihat Demo <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tentang Kami -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Tentang Kami</h2>
+                <p class="text-lg text-gray-700 mb-8 text-center">
+                    TD Digital adalah perusahaan teknologi yang berdedikasi untuk membantu Anda beralih ke
+                    dunia digital.
+                    Dengan pengalaman lebih dari 5 tahun, kami telah melayani ratusan klien dari berbagai industri.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    <div class="text-center">
+                        <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-rocket text-blue-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Cepat & Efisien</h3>
+                        <p class="text-gray-600">Proses development yang cepat dengan timeline yang jelas</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="bg-red-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-mobile-alt text-red-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Responsif</h3>
+                        <p class="text-gray-600">Website dan aplikasi yang optimal di semua perangkat</p>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-palette text-purple-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Desain Modern</h3>
+                        <p class="text-gray-600">UI/UX yang menarik dan user-friendly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Kontak -->
+    <section id="kontak" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Hubungi Kami</h2>
+            <div class="max-w-2xl mx-auto">
+                <form id="contact-form" class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">Nama Lengkap</label>
+                        <input type="text" id="name" name="name" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-semibold mb-2">Pesan</label>
+                        <textarea id="message" name="message" rows="4" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button type="submit"
+                            class="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Kirim Pesan
+                        </button>
+                        <a href="mailto:tekomdevdigital@gmail.com"
+                            class="flex-1 bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors text-center">
+                            <i class="fas fa-envelope mr-2"></i>Email
+                        </a>
+                    </div>
+                </form>
+
+                <div id="success-message"
+                    class="hidden mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
+                    Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="asset/img/logo3.png" alt="Logo TD Digital" class="h-8 w-auto object-contain">
+                        <span class="text-xl font-bold">TD Digital</span>
+                    </div>
+                    <p class="text-gray-400">Solusi teknologi untuk kemajuan bisnis Anda</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontak</h3>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-phone mr-2"></i>+62 8591-0651-3667</p>
+                    <p class="text-gray-400 mb-2"><i class="fas fa-envelope mr-2"></i>tekomdevdigital@gmail.com</p>
+                    <p class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i>SulSel, Indonesia</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">Copyright © 2025 TD Digital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Simulate form submission
+            setTimeout(() => {
+                successMessage.classList.remove('hidden');
+                contactForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 5000);
+            }, 1000);
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
